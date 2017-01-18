@@ -1,0 +1,21 @@
+/*
+Color pallete
+http://paletton.com/palette.php?uid=13S0u0kmpIzb%2BTYhMO3r1CbxWuS
+*/
+
+body {
+    background-color: #9FADED !important;
+}
+
+#main-block {
+    background-color: #5167D0;
+    box-shadow: 10px 10px 5px #888888;
+    border-radius: 10px;
+}
+
+#post-block {
+    background-color: #9FADED;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+}

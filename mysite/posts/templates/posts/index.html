@@ -1,0 +1,24 @@
+{% extends "posts/header.html" %}
+{% block content %}
+<div class="row">
+    <div id="main-block" class="col-md-8 col-md-offset-2">
+        <form action="{% url 'posts:test_show' submitted_text %}" method="post">
+            {% csrf_token %}
+
+            <div class="input-group" style="margin-top: 20px;">
+                <input class="form-control" type="text" name="submitted_text" value="{{submitted_text}}">
+                <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit">Submit</button>
+                    <i class="glyphicon glyphicon-search"></i>
+                </div>
+            </div>
+
+        </form>
+            {% for item in latest_posts %}
+            <div id="post-block">
+                <p>{{ item.post_text }}</p>
+            </div>
+            {% endfor %}
+    </div>
+</div>
+{% endblock %}

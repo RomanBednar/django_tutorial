@@ -5,17 +5,24 @@ http://paletton.com/palette.php?uid=13S0u0kmpIzb%2BTYhMO3r1CbxWuS
 
 body {
     background-color: #9FADED !important;
+    font-family: 'Permanent Marker', cursive !important;
+    font-size: 10px;
 }
 
 #main-block {
     background-color: #5167D0;
     box-shadow: 10px 10px 5px #888888;
     border-radius: 10px;
+    padding-bottom: 20px;
 }
 
 #post-block {
     background-color: #9FADED;
-    margin: 10px;
+    margin: 10px 0 0 70px;
     padding: 5px;
-    border-radius: 10px;
+    border-radius: 4px;
+}
+
+#remove-block {
+    margin: 15px 0 0 0;
 }

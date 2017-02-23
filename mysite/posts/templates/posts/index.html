@@ -4,20 +4,28 @@
     <div id="main-block" class="col-md-8 col-md-offset-2">
         <form action="{% url 'posts:add_item' submitted_text %}" method="post">
             {% csrf_token %}
-
             <div class="input-group" style="margin-top: 20px;">
                 <input class="form-control" type="text" name="submitted_text" value="{{submitted_text}}">
                 <div class="input-group-btn">
-                    <button class="btn btn-default" type="submit">Submit</button>
+                    <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-plus-sign" style="vertical-align:middle"></span></button>
                 </div>
             </div>
-
         </form>
-            {% for item in latest_posts %}
-            <div id="post-block">
-                <p>{{ item.post_text }}</p>
+
+        {% for item in latest_posts %}
+        <form action="{% url 'posts:remove_item' item.id %}" method="post">
+            {% csrf_token %}
+            <div class="list-group">
+                <div id="post-block" class="col-xs-10">
+                    <p>{{ item.post_text }}</p>
+                </div>
+                <div class="col-xs-1">
+                    <button class="btn btn-default btn-danger btn-md" id="remove-block" name="post_id" value="{{ item.id }}" type="submit">
+                        <span style="vertical-align:middle" class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
             </div>
-            {% endfor %}
-    </div>
+        </form>
+        {% endfor %}
 </div>
 {% endblock %}

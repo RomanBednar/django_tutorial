@@ -21,3 +21,8 @@ urlpatterns = [
     url(r'^polls', include('polls.urls')),
     url(r'^posts', include('posts.urls')),
 ]
+
+##This should be removed when moving to production:
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+urlpatterns += staticfiles_urlpatterns()
+##

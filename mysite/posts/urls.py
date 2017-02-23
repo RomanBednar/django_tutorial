@@ -6,5 +6,5 @@ app_name = 'posts'
 
 urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
-    url(r'^(?P<submitted_text>)/test_show$', views.test_show, name='test_show'),
+    url(r'^(?P<submitted_text>)/test_show$', views.add_item, name='add_item'),
 ]

@@ -17,13 +17,14 @@ class IndexView(generic.ListView):
         """Return the last five published questions."""
         return Post.objects.order_by('-date_published')[:20]
 
-def test_show(request, submitted_text):
+def add_item(request, submitted_text):
 
-    obtained_text = request.POST.get('submitted_text', False)
-    if obtained_text:
+    try:
+        obtained_text = request.POST.get('submitted_text', False)
+    # if obtained_text:
         p = Post(post_text=obtained_text, date_published=timezone.now())
         p.save()
         #return HttpResponse("You've submitted this text: %s" % obtained_text)
         return HttpResponseRedirect(reverse('posts:index'))
-    else:
+    except (ValueError):
         pass

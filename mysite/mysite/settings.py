@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'polls.apps.PollsConfig',
     'posts.apps.PostsConfig',
+    'rango.apps.RangoConfig'
 ]
 
 MIDDLEWARE = [
